@@ -1,4 +1,4 @@
-import { View, Text, Image, SafeAreaView, TextInput, ScrollView } from 'react-native'
+import { View, Text, Image, SafeAreaView, TextInput, ScrollView, StatusBar, TouchableOpacity } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { Ionicons, FontAwesome5, FontAwesome, Entypo } from '@expo/vector-icons';
@@ -14,7 +14,8 @@ const HomeScreen = () => {
 
     return (
         <SafeAreaView  >
-            <View className="w-screen bg-white  pt-10 h-36 pl-3">
+            <StatusBar className=" bg-gray-500" />
+            <View className="w-screen bg-white h-fit pl-3">
             <View className=" gap-2 items-center flex-row mr-7">
             <Image
                 className="rounded-full"
@@ -27,7 +28,9 @@ const HomeScreen = () => {
                 <Ionicons name="md-chevron-down-sharp" size={24} color="#00ccbb" />
                 </Text>
             </View>
-            <FontAwesome5 name="user" size={24} color="#00ccbb" />
+                    <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+                        <FontAwesome5 name="user" size={24} color="#00ccbb" />
+                    </TouchableOpacity>
             </View>
             {/* search  */}
             <View className=" flex-row pr-5 items-center mb-2 mt-1">

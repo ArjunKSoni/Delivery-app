@@ -4,7 +4,7 @@
     "slug": "delivery",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/delivery.jpg",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -25,7 +25,7 @@
       "package": "com.arjun6261.delivery"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/delivery.jpg"
     },
     "extra": {
       "eas": {
