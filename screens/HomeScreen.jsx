@@ -13,7 +13,7 @@ const HomeScreen = () => {
     }, [])
 
     return (
-        <SafeAreaView >
+        <SafeAreaView  >
             <View className="w-screen bg-white  pt-10 h-36 pl-3">
             <View className=" gap-2 items-center flex-row mr-7">
             <Image
@@ -38,7 +38,12 @@ const HomeScreen = () => {
                 <Entypo name="flow-parallel" size={24} color="#00ccbb" />
             </View>
             </View>
-            <ScrollView className="bg-green-600 h-screen w-screen">
+            <ScrollView showsVerticalScrollIndicator={false}
+                contentContainerStyle={{
+                    paddingBottom: 150,
+
+                }}
+                className="bg-gray-200 h-screen w-screen">
                 {/* categories */}
                 <Categories/>
                 {/* Featured rows */}
