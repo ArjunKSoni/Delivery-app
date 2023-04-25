@@ -6,7 +6,6 @@ const BasketProvider = ({ children }) => {
     const [basket, setBasket] = useState([])
     const addToBasket = (k) => {
         setBasket(basket.concat(k))
-        console.log(basket)
     }
     const removeFromBasket = (id) => {
         const index = basket.findIndex((item) => item.id == id)
@@ -15,8 +14,6 @@ const BasketProvider = ({ children }) => {
             newBasket.splice(index, 1);
             setBasket(newBasket)
         }
-
-        console.log(basket)
     }
 
     return (
