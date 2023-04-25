@@ -19,7 +19,7 @@ const HomeScreen = () => {
             <View className=" gap-2 items-center flex-row mr-7">
             <Image
                 className="rounded-full"
-                source={require("../assets/delivery.jpg")}
+                        source={require("../assets/icon.png")}
                 style={{height:50,width:50}} 
             />
             <View className="flex-1">
