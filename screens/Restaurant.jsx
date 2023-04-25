@@ -46,12 +46,12 @@ const Restaurant = () => {
             <ScrollView
                 showsVerticalScrollIndicator={false}
                 className="bg-white w-screen h-fit p-3">
-                <DishCard />
-                <DishCard />
-                <DishCard />
-                <DishCard />
-                <DishCard />
-                <DishCard />
+                <DishCard Dname={"rooti"} id={1} price={10} />
+                <DishCard Dname={"dal"} id={2} price={100} />
+                <DishCard Dname={"burger"} id={3} price={50} />
+                <DishCard Dname={"biryani"} id={4} price={100} />
+                <DishCard Dname={"rooti dal"} id={5} price={100} />
+                <DishCard Dname={"maggie"} id={6} price={10} />
             </ScrollView>
         </ScrollView>
     )

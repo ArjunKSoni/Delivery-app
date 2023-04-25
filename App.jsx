@@ -4,8 +4,8 @@ import HomeScreen from './screens/HomeScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Restaurant from './screens/Restaurant';
 import Login from './screens/Login';
-// import { Provider } from 'react-redux'
-// import { store } from '@reduxjs/toolkit';
+import BasketProvider from './context/storeContext';
+
 
 
 export default function App() {
@@ -16,10 +16,9 @@ export default function App() {
     // fontawesom = just hit to "https://icons.expo.fyi/"
     // carousel https://www.educative.io/answers/how-to-integrate-carousel-in-react-native-with-pagination
     // api from sanity.io/sonny
-    // useContext ki jgh redux use krna hai  <create folder features for reduc components>
+    // useContext use kr sakte hai
     // android wallpaper ="https://wallpapercave.com/background-android" or "https://www.pxfuel.com/en/query?q=background+android+apps"
-
-    // <Provider store={store}>
+    <BasketProvider>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
@@ -27,6 +26,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
       </Stack.Navigator>
     </NavigationContainer>
-    // </Provider>
+    </BasketProvider>
+
   );
 }
