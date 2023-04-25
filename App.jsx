@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Restaurant from './screens/Restaurant';
 import Login from './screens/Login';
 import BasketProvider from './context/storeContext';
+import Cart from './screens/cart';
 
 
 
@@ -24,6 +25,9 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Restaurant" component={Restaurant} />
         <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Cart" component={Cart}
+            options={{ presentation: "modal", headerShown: false, animation: "flip" }}
+          />
       </Stack.Navigator>
     </NavigationContainer>
     </BasketProvider>

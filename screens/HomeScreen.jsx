@@ -14,7 +14,7 @@ const HomeScreen = () => {
 
     return (
         <SafeAreaView  >
-            <StatusBar className=" bg-gray-500" />
+            <StatusBar backgroundColor={"white"} barStyle="dark-content" />
             <View className="w-screen bg-white h-fit pl-3">
             <View className=" gap-2 items-center flex-row mr-7">
             <Image
