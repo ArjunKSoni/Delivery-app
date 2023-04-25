@@ -27,7 +27,7 @@ export default function DishCard({ Dname, id, price }) {
             <View className="flex-row ml-3 items-center mt-3 space-x-4">
                 <TouchableOpacity onPress={() => { removeFromBasket({ Dname, id, price }) }}><MaterialCommunityIcons name="minus-circle" size={36} color="black" /></TouchableOpacity>
                 <Text className='text-xl font-bold'>{basket.filter((item) => item.id === id).length}</Text>
-                <TouchableOpacity onPress={() => { addToBasket(id) }}><FontAwesome5 name="plus-circle" size={30} color="black" /></TouchableOpacity>
+                <TouchableOpacity onPress={() => { addToBasket({ Dname, id, price }) }}><FontAwesome5 name="plus-circle" size={30} color="black" /></TouchableOpacity>
             </View>
             <View style={{ height: 1 }} className="w-screen bg-gray-300 my-2"></View>
         </View>

@@ -3,17 +3,22 @@ import BasketContext from "./storeContextCe";
 
 
 const BasketProvider = ({ children }) => {
-    const [basket, setBasket] = useState([])
+    const [basket, setBasket] = useState(["1"])
     const addToBasket = (k) => {
         setBasket(basket.concat(k))
+        console.log(basket)
     }
-    const removeFromBasket = (id) => {
-        const index = basket.findIndex((item) => item.id == id)
+    const removeFromBasket = (k) => {
+        const index = basket.findIndex((item) => item.id === k.id)
         let newBasket = [...basket]
-        if (index) {
+
+        if (index && basket.length !== 1) {
             newBasket.splice(index, 1);
             setBasket(newBasket)
         }
+
+
+        console.log(basket)
     }
 
     return (
