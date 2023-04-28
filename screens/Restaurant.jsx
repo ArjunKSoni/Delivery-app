@@ -7,7 +7,7 @@ import BasketContext from '../context/storeContextCe';
 
 const Restaurant = () => {
 
-    const { basket, setBasket, removeFromBasket, addToBasket, totalPrice } = useContext(BasketContext)
+    const { basket, setBasket, removeFromBasket, addToBasket, totalPrice, SetMarker, marker } = useContext(BasketContext)
 
     const navigator = useNavigation()
 
@@ -18,10 +18,10 @@ const Restaurant = () => {
             }
         )
     }, [])
-    const { params: { add, img, title, rating, desc } } = useRoute()
+    const { params: { add, img, title, rating, desc, lat, log } } = useRoute()
     return (
         <>
-            <TouchableOpacity onPress={() => navigator.navigate("Cart")} activeOpacity={0.95} className="absolute bottom-5 w-full z-50 items-center">
+            <TouchableOpacity onPress={() => { SetMarker({ lat: lat, log: log, title: title, desc: desc }); navigator.navigate("Cart") }} activeOpacity={0.95} className="absolute bottom-5 w-full z-50 items-center">
                 <View style={{ backgroundColor: "#00ccbb", elevation: 15 }} className="w-4/5 flex-row justify-center text-center items-center h-fit p-4 rounded-2xl">
                     <Text className="text-white text-xl font-bold text-center">{basket.length - 1}</Text>
                     <Text className="text-white text-xl font-bold text-center flex-1">View Basket</Text>
@@ -31,7 +31,7 @@ const Restaurant = () => {
             </TouchableOpacity>
 
             <ScrollView className=" " >
-            <View className="bg-white h-fit relative">
+                <View className="bg-white h-fit relative">
                 <Image
                     resizeMode='cover'
                     style={{ height: 200, width: "100%" }}
@@ -60,14 +60,14 @@ const Restaurant = () => {
                 <Text className="text-xl font-extrabold ml-6 py-2">Menu</Text>
             </View>
             <ScrollView
-                showsVerticalScrollIndicator={false}
+                    showsVerticalScrollIndicator={false}
                     className="bg-white w-screen h-fit p-3 pb-20">
-                <DishCard Dname={"rooti"} id={1} price={10} />
-                <DishCard Dname={"dal"} id={2} price={100} />
-                <DishCard Dname={"burger"} id={3} price={50} />
-                <DishCard Dname={"biryani"} id={4} price={100} />
-                <DishCard Dname={"rooti dal"} id={5} price={100} />
-                <DishCard Dname={"maggie"} id={6} price={10} />
+                    <DishCard Dname={"rooti"} id={1} price={10} img={require("../assets/images/burger.jpeg")} link="../assets/images/burger.jpeg" />
+                    <DishCard Dname={"dal"} id={2} price={100} img={require("../assets/images/burger.jpeg")} link="../assets/images/burger.jpeg" />
+                    <DishCard Dname={"burger"} id={3} price={50} img={require("../assets/images/burger.jpeg")} link="../assets/images/burger.jpeg" />
+                    <DishCard Dname={"biryani"} id={4} price={100} img={require("../assets/images/burger.jpeg")} link="../assets/images/burger.jpeg" />
+                    <DishCard Dname={"rooti dal"} id={5} price={110} img={require("../assets/images/burger.jpeg")} link="../assets/images/burger.jpeg" />
+                    <DishCard Dname={"maggie"} id={6} price={10} img={require("../assets/images/burger.jpeg")} link="../assets/images/burger.jpeg" />
             </ScrollView>
         </ScrollView>
         </>

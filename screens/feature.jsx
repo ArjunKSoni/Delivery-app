@@ -3,11 +3,11 @@ import React from 'react'
 import { Ionicons, EvilIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-const Feature = ({ title, img, rating, desc, add }) => {
+const Feature = ({ title, img, rating, desc, add, log, lat }) => {
     const navigation = useNavigation()
     return (
         <TouchableOpacity onPress={() => {
-            navigation.navigate("Restaurant", { img, title, rating, desc, add })
+            navigation.navigate("Restaurant", { img, title, rating, desc, add, log, lat })
         }} className="flex-1 bg-white rounded pb-3 mr-2">
             <Image
                 className="rounded"

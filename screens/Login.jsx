@@ -29,9 +29,6 @@ const Login = () => {
             }} style={{ elevation: 20 }}
                 className="  p-1 bg-white rounded-full items-center text-center absolute top-9 left-3 "><Ionicons name="arrow-back" size={30} color="#00ccbb" />
             </TouchableOpacity>
-            <View className="">
-                <Text className="mt-8 text-white text-2xl font-extrabold  text-center ">{`${basket[1].Dname} and price is ${basket[1].price}`}</Text>
-            </View>
         </ImageBackground>
     );
 };

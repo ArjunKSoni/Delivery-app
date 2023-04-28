@@ -15,10 +15,10 @@ export default function Categories() {
     { url: require("../assets/images/pasta.jpeg"), title: "Pasta" },
     { url: require("../assets/images/chicken.jpeg"), title: "Chicken" }
     ]
-    const feat = [{ url: require("../assets/images/bulk.jpeg"), id: 1, rating: 4.8, desc: "Dine-in·Takeaway·Delivery", title: "Mayaaz Food Zone", add: "Infront of, Krishna Complex, road" },
-    { url: require("../assets/images/cashback.webp"), id: 2, rating: 4.7, desc: "Dine-in·Kerbside pickup·Delivery", title: "Dr. Lahari's Food Lab", add: "A-25, Street Number 1" },
-    { url: require("../assets/images/dotd.jpg"), id: 3, rating: 4.1, desc: "Dine-in·Drive-through", title: "Meals on wheels", add: "Morar Road, Gole Ka Mandir Rd" },
-    { url: require("../assets/images/fir.jpeg"), id: 4, rating: 3.8, desc: "Modest vegetarian eatery & sweet shop", title: "Alfanzo Restaurant", add: "Madhav Rao Scindia Marg" }
+    const feat = [{ url: require("../assets/images/bulk.jpeg"), id: 1, rating: 4.8, desc: "Dine-in·Takeaway·Delivery", title: "Mayaaz Food Zone", add: "Infront of, Krishna Complex, road", lat: 78.209219, log: 26.227556 },
+        { url: require("../assets/images/cashback.webp"), id: 2, rating: 4.7, desc: "Dine-in·Kerbside pickup·Delivery", title: "Dr. Lahari's Food Lab", add: "A-25, Street Number 1", lat: 78.2141, log: 26.2196 },
+        { url: require("../assets/images/dotd.jpg"), id: 3, rating: 4.1, desc: "Dine-in·Drive-through", title: "Meals on wheels", add: "Morar Road, Gole Ka Mandir Rd", lat: 78.2102, log: 26.2336 },
+        { url: require("../assets/images/fir.jpeg"), id: 4, rating: 3.8, desc: "Modest vegetarian eatery & sweet shop", title: "Alfanzo Restaurant", add: "Madhav Rao Scindia Marg", lat: 78.18737, log: 26.210312 }
     ]
 
 
@@ -53,7 +53,7 @@ export default function Categories() {
 
                 {/* featured card */}
                 {feat.map((e) => {
-                    return <Feature title={e.title} img={e.url} rating={e.rating} add={e.add} desc={e.desc} />
+                    return <Feature title={e.title} img={e.url} rating={e.rating} add={e.add} desc={e.desc} lat={e.lat} log={e.log} />
                 })}
 
             </ScrollView>

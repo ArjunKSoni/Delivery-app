@@ -6,6 +6,8 @@ import Restaurant from './screens/Restaurant';
 import Login from './screens/Login';
 import BasketProvider from './context/storeContext';
 import Cart from './screens/cart';
+import Preparing from './screens/preparing';
+import Delivery from './screens/Delivery';
 
 
 
@@ -19,6 +21,9 @@ export default function App() {
     // api from sanity.io/sonny
     // useContext use kr sakte hai
     // android wallpaper ="https://wallpapercave.com/background-android" or "https://www.pxfuel.com/en/query?q=background+android+apps"
+    // for animation   https://www.npmjs.com/package/react-native-animatable
+
+
     <BasketProvider>
     <NavigationContainer>
       <Stack.Navigator>
@@ -26,8 +31,10 @@ export default function App() {
         <Stack.Screen name="Restaurant" component={Restaurant} />
         <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Cart" component={Cart}
-            options={{ presentation: "modal", headerShown: false, animation: "flip" }}
+            options={{ presentation: "modal", headerShown: false }}
           />
+          <Stack.Screen name="Preparing" component={Preparing} options={{ headerShown: false, presentation: "fullScreenModal" }} />
+          <Stack.Screen name="Delivery" component={Delivery} options={{ headerShown: false, presentation: "fullScreenModal" }} />
       </Stack.Navigator>
     </NavigationContainer>
     </BasketProvider>

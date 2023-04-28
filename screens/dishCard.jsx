@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react'
 import { MaterialCommunityIcons, FontAwesome5, FontAwesome } from '@expo/vector-icons';
 import BasketContext from '../context/storeContextCe';
 
-export default function DishCard({ Dname, id, price }) {
+export default function DishCard({ Dname, id, price, img, link }) {
     const [value, setValue] = useState(0)
     const { basket, setBasket, removeFromBasket, addToBasket } = useContext(BasketContext)
 
@@ -16,7 +16,7 @@ export default function DishCard({ Dname, id, price }) {
                 </View>
                 <Image
                     className="rounded "
-                    source={require("../assets/images/burger.jpeg")}
+                    source={img}
                     style={{ height: 70, width: 70 }}
                 />
             </View>
@@ -25,9 +25,9 @@ export default function DishCard({ Dname, id, price }) {
                 <Text className="text-gray-500 pb-1 ml-1">{price}</Text>
             </View>
             <View className="flex-row ml-3 items-center mt-3 space-x-4">
-                <TouchableOpacity onPress={() => { removeFromBasket({ Dname, id, price }) }}><MaterialCommunityIcons name="minus-circle" size={36} color="black" /></TouchableOpacity>
+                <TouchableOpacity onPress={() => { removeFromBasket({ Dname, id, price, img, link }); }}><MaterialCommunityIcons name="minus-circle" size={36} color="black" /></TouchableOpacity>
                 <Text className='text-xl font-bold'>{basket.filter((item) => item.id === id).length}</Text>
-                <TouchableOpacity onPress={() => { addToBasket({ Dname, id, price }) }}><FontAwesome5 name="plus-circle" size={30} color="black" /></TouchableOpacity>
+                <TouchableOpacity onPress={() => { addToBasket({ Dname, id, price, img, link }) }}><FontAwesome5 name="plus-circle" size={30} color="black" /></TouchableOpacity>
             </View>
             <View style={{ height: 1 }} className="w-screen bg-gray-300 my-2"></View>
         </View>
